@@ -18,8 +18,7 @@ CREATE TABLE IF NOT EXISTS transactions (
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Precreate an admin user with username "admin" and password "admin123" (hashed with bcrypt)
--- The hash below is a valid bcrypt hash for "admin123".
+
 INSERT INTO users (username, password_hash, role, account_number, balance) 
-VALUES ('admin', '$2b$12$R.SREpIhUq8Z6xL94541hOL9O5hWe/sT7O.6eB70V5x.a43M4NIfC', 'admin', 'ADMIN_ACC', 0.00)
+VALUES ('secret', 'secret', 'secret', 'secret', 'secret')
 ON DUPLICATE KEY UPDATE username='admin';
