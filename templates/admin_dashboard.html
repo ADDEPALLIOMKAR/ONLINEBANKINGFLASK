@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Admin Panel</div>
+        <button onclick="logout()" class="btn btn-danger">Logout</button>
+    </nav>
+    <div class="container">
+        
+        <!-- Create User Section -->
+        <div class="card">
+            <h3>Create Customer Account</h3>
+            <form id="createUserForm" class="flex-form">
+                <input type="text" id="newUsername" placeholder="Username" required>
+                <input type="password" id="newPassword" placeholder="Password" required>
+                <input type="number" id="newBalance" placeholder="Initial Balance" step="0.01" min="0" required>
+                <button type="submit" class="btn btn-primary">Create User</button>
+            </form>
+            <div id="createUserMessage" class="message"></div>
+        </div>
+
+        <!-- Deposit Money Section -->
+        <div class="card">
+            <h3>Deposit Money</h3>
+            <form id="depositForm" class="flex-form">
+                <input type="text" id="depositAccount" placeholder="Account Number" required>
+                <input type="number" id="depositAmount" placeholder="Amount" step="0.01" min="0.01" required>
+                <button type="submit" class="btn btn-success">Deposit</button>
+            </form>
+            <div id="depositMessage" class="message"></div>
+        </div>
+
+        <!-- Users Table -->
+        <div class="card">
+            <div class="card-header">
+                <h3>All Customers</h3>
+                <button onclick="loadUsers()" class="btn btn-secondary">Refresh</button>
+            </div>
+            <div class="table-responsive">
+                <table id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Account No.</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Transactions Table -->
+        <div class="card">
+            <div class="card-header">
+                <h3>All Transactions</h3>
+                <button onclick="loadStaticAdminTransactions()" class="btn btn-secondary">Refresh</button>
+            </div>
+            <div class="table-responsive">
+                <table id="adminTransactionsTable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Sender</th>
+                            <th>Receiver</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="/static/js/main.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            loadUsers();
+            loadStaticAdminTransactions();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Customer Portal</div>
+        <button onclick="logout()" class="btn btn-danger">Logout</button>
+    </nav>
+    <div class="container">
+        
+        <!-- Balance Status -->
+        <div class="card center-content text-center">
+            <h3>Current Balance</h3>
+            <h1 id="userBalance" class="balance-text">$0.00</h1>
+            <button onclick="loadBalance()" class="btn btn-secondary mt-2">Refresh Balance</button>
+        </div>
+
+        <!-- Transfer Money -->
+        <div class="card">
+            <h3>Transfer Money</h3>
+            <form id="transferForm" class="flex-form">
+                <input type="text" id="transferReceiver" placeholder="Receiver Account No." required>
+                <input type="number" id="transferAmount" placeholder="Amount" step="0.01" min="0.01" required>
+                <button type="submit" class="btn btn-primary">Transfer</button>
+            </form>
+            <div id="transferMessage" class="message"></div>
+        </div>
+
+        <!-- Transaction History -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Transaction History</h3>
+                <button onclick="loadHistory()" class="btn btn-secondary">Refresh</button>
+            </div>
+            <div class="table-responsive">
+                <table id="historyTable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Sender</th>
+                            <th>Receiver</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <script src="/static/js/main.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            loadBalance();
+            loadHistory();
+        });
+    </script>
+</body>
+</html>

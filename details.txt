@@ -1,0 +1,19 @@
+admin : 
+admin
+admin123
+
+
+users:
+Omkar
+Omkar123
+Mohan
+Mohan123
+
+
+how to start me :
+
+1. start the mysql workbench
+2. open terminal
+3. cd C:\Users\OMKAR\Desktop\OBF
+4. python app.py
+5. http://localhost:5000
