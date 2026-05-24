@@ -9,18 +9,18 @@ app.secret_key = 'super_secret_key_for_session'
 # Database configuration (adjust based on your local WAMP/XAMPP/MySQL config)
 db_config = {
     'host': 'localhost',
-    'user': 'root', 
-    'password': 'Vinu@6306', 
-    'database': 'online_banking'
+    'user': 'secret', 
+    'password': 'secret', 
+    'database': 'secret'
 }
 
 def get_db_connection():
     """Helper to get a database connection."""
     return mysql.connector.connect(**db_config)
 
-# ==============================
+
 # VIEW ROUTES
-# ==============================
+
 
 @app.route('/')
 def index():
