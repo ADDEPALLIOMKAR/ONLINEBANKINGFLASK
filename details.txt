@@ -1,14 +1,3 @@
-admin : 
-admin
-admin123
-
-
-users:
-Omkar
-Omkar123
-Mohan
-Mohan123
-
 
 how to start me :
 
