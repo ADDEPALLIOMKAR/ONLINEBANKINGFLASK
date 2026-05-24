@@ -47,9 +47,9 @@ def customer_dashboard():
         return redirect(url_for('login_page'))
     return render_template('customer_dashboard.html')
 
-# ==============================
+
 # AUTHENTICATION API ROUTES
-# ==============================
+
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -81,9 +81,8 @@ def logout():
     session.clear()
     return jsonify({'success': True})
 
-# ==============================
+
 # ADMIN API ROUTES
-# ==============================
 
 @app.route('/admin/create_user', methods=['POST'])
 def create_customer():
@@ -177,9 +176,9 @@ def get_all_transactions():
     conn.close()
     return jsonify(transactions)
 
-# ==============================
+
 # CUSTOMER API ROUTES
-# ==============================
+
 
 @app.route('/user/balance', methods=['GET'])
 def get_balance():
